@@ -21,7 +21,7 @@ jobs:
         uses: azure/container-apps-deploy-action@v1
         with:
           appSourcePath: ${{ github.workspace }}
-          acrName: ${{ secrets.AZURE_ACR_NAME }}
-          resourceGroup: ${{ secrets.AZURE_RESOURCE_GROUP }}
-          containerAppName: ${{ secrets.AZURE_CONTAINER_APP_NAME }}
-          containerAppEnvironment: ${{ secrets.AZURE_CONTAINER_APP_ENVIRONMENT }}
+          acrName: ${{ vars.AZURE_PREFIX }}acr
+          resourceGroup: ${{ vars.AZURE_RG }}
+          containerAppName: ${{ vars.AZURE_PREFIX }}containerapp
+          containerAppEnvironment: ${{ vars.AZURE_PREFIX }}containerappenvironment
